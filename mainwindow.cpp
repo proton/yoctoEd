@@ -10,20 +10,24 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    auto filePath = QCoreApplication::arguments().at(1);
+    this->filePath = QCoreApplication::arguments().at(1);
 
-    QFile file(filePath);
-    file.open(QIODevice::ReadOnly);
-
+    QFile file(this->filePath);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
     QTextStream in(&file);
     auto content = in.readAll();
     file.close();
-
     ui->textEdit->setPlainText(content);
 }
 
 MainWindow::~MainWindow()
 {
+    QFile file(this->filePath);
+    file.open(QIODevice::WriteOnly | QIODevice::Text);
+    QTextStream out(&file);
+    out << ui->textEdit->toPlainText();
+    file.close();
+
     delete ui;
 }
 

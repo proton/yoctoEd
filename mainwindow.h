@@ -17,5 +17,6 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QString filePath;
 };
 #endif // MAINWINDOW_H
