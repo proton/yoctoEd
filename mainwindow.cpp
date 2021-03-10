@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowTitle(this->filePath);
 
     new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
+    new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_S), this, SLOT(close()));
     new QShortcut(QKeySequence(Qt::Key_Escape), this, SLOT(close()));
 }
 
