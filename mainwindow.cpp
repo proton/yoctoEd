@@ -3,6 +3,7 @@
 
 #include <QFile>
 #include <QTextStream>
+#include <QShortcut>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,6 +21,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->textEdit->setPlainText(content);
 
     this->setWindowTitle(this->filePath);
+
+    new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
+    new QShortcut(QKeySequence(Qt::Key_Escape), this, SLOT(close()));
 }
 
 MainWindow::~MainWindow()
