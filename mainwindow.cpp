@@ -18,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent)
     auto content = in.readAll();
     file.close();
     ui->textEdit->setPlainText(content);
+
+    this->setWindowTitle(this->filePath);
 }
 
 MainWindow::~MainWindow()
