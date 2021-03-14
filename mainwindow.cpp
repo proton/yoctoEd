@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "highlighter.h"
 
 #include <QFile>
 #include <QTextStream>
@@ -19,6 +20,8 @@ MainWindow::MainWindow(QWidget *parent)
     auto content = in.readAll();
     file.close();
     ui->textEdit->setPlainText(content);
+
+    new Highlighter(ui->textEdit->document());
 
     this->setWindowTitle(this->filePath);
 
