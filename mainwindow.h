@@ -16,6 +16,10 @@ public:
     ~MainWindow();
 
 private:
+    void setupShortcuts();
+    void loadDocument();
+    void saveDocument();
+
     Ui::MainWindow *ui;
     QString filePath;
 };
