@@ -3,3 +3,5 @@ yoctoEd
 Makefile
 *.o
 TODO
+yoctoEd.app
+.qmake.stash
