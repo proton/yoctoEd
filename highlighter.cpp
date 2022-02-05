@@ -5,7 +5,7 @@ Highlighter::Highlighter(QTextDocument *parent) : QSyntaxHighlighter(parent)
 
     HighlightingRule rule;
     rule.format.setForeground(Qt::darkGray);
-    rule.pattern = QRegularExpression("#.*");
+    rule.pattern = QRegularExpression("^#.*");
     highlightingRules.append(rule);
 
 }
