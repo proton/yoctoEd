@@ -12,7 +12,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    this->filePath = QCoreApplication::arguments().at(1);
+    if (QCoreApplication::arguments().size() > 1)
+        this->filePath = QCoreApplication::arguments().at(1);
     new Highlighter(ui->textEdit->document());
 
     setupShortcuts();
@@ -27,6 +28,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::loadDocument()
 {
+    if (this->filePath.size() == 0) return;
+
     QFile file(this->filePath);
     file.open(QIODevice::ReadOnly | QIODevice::Text);
     QTextStream in(&file);
@@ -38,6 +41,8 @@ void MainWindow::loadDocument()
 
 void MainWindow::saveDocument()
 {
+    if (this->filePath.size() == 0) return;
+
     QFile file(this->filePath);
     file.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream out(&file);
