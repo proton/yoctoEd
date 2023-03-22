@@ -52,8 +52,8 @@ void MainWindow::saveDocument()
 
 void MainWindow::setupShortcuts()
 {
-    new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q), this, SLOT(close()));
-    new QShortcut(QKeySequence(Qt::CTRL + Qt::Key_S), this, SLOT(close()));
+    new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q), this, SLOT(close()));
+    new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_S), this, SLOT(close()));
     new QShortcut(QKeySequence(Qt::Key_Escape), this, SLOT(close()));
 }
 
