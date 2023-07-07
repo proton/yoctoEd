@@ -20,7 +20,11 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <widget class="QPlainTextEdit" name="textEdit"/>
+     <widget class="QPlainTextEdit" name="textEdit">
+      <property name="tabStopDistance">
+       <double>40.000000000000000</double>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

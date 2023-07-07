@@ -16,6 +16,10 @@ MainWindow::MainWindow(QWidget *parent)
         this->filePath = QCoreApplication::arguments().at(1);
     new Highlighter(ui->textEdit->document());
 
+    QFont f("unexistent");
+    f.setStyleHint(QFont::Monospace);
+    ui->textEdit->setFont(f);
+
     setupShortcuts();
     loadDocument();
 }
